@@ -1,11 +1,19 @@
 from time import sleep
 from pyfiglet import Figlet
 import termcolor as tc
-from replit import clear
+from os import system
 from periodictable import *
 import re
 
 title_font = Figlet(font='big')
+
+def clear(): 
+    # for windows 
+    if name == 'nt': 
+        _ = system('cls') 
+    # for mac and linux(here, os.name is 'posix') 
+    else: 
+        _ = system('clear')
 
 def get_type(value):
     try:
